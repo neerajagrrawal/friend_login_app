@@ -1,9 +1,9 @@
 # Friends Login APP
 
-#Install the dependencies
+# Install the dependencies
 npm install
 
-#Setting Up Database-
+# Setting Up Database-
 We need to have MYSQL Server installed.
 1. After installing MYSQL Server, open MYSQL Command Line Client.
 2. Enter your password
@@ -34,17 +34,17 @@ We need to have MYSQL Server installed.
 3. The App should start to run on a port and we should get a message like 'Connected to MYSQL' if setup of database is successful.
 4. Now note down the port number in console at which the app is started.
 
-#Testing Application-
+# Testing Application-
 1. We can use any testing tool like mocha etc.
 2. We can basically mock the functionality of different function in our app like endpoints etc. and then test with different scenarios.
 3. Like we can see for cases like empty data etc.
 
-#Testing API Endpoints with postman -
+# Testing API Endpoints with postman -
 1. To test fetch All Users- type 'http://localhost:5000/API/viewAllUsersAPI'. Replace the port number with your own port that we copied from console. The request type is GET.
 2. To test fetch User's friends- type 'http://localhost:5000/API/viewAllFriendsDetailsAPI/neeraj'. Replace the port number with your own port that we copied from console. Replace 'neeraj' in the URL from any id for whose you want to fetch friends.The request type is GET.
 3. To test fetch User's friends- type 'http://localhost:5000/API/viewFriendsOfFriendsAPI/neeraj'. Replace the port number with your own port that we copied from console. Replace 'neeraj' in the URL from any id for whose you want to fetch friends of friends.The request type is GET.
 
-#About the Application-
+# About the Application-
 1. We have to login/Register to access the Dashboard.
 2. Once we Register and login, we are taken to Dashboard page.
 3. A session is maintained for this.
