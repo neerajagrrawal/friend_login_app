@@ -1,0 +1,45 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+
+      <% include ./partials/messages %>
+
+
+
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome, <%= user[0].first_name %>&nbsp<%= user[0].last_name %></p>
+<a href="/users/viewAllUsers" class="btn btn-secondary">View All Users</a>
+
+<form method="POST">
+<div class="form-group">
+  <label for="id">User Id</label>
+  <input
+    type="id"
+    id="id"
+    name="id"
+    class="form-control"
+    placeholder="Enter User Id"
+    value="<%= typeof id != 'undefined' ? id : '' %>"
+  />
+</div>
+<div class="container">
+  <div class="row">
+    <button  class="btn btn-primary mr-3" type="submit" formaction="/users/viewFriends">
+      View User's Friends
+    </button>
+    <button  class="btn btn-primary" type="submit" formaction="/users/viewFOF1">
+      View User's Friends of Friends
+    </button>
+  </div>
+
+</div>
+
+
+</form>
+
+
+</div>
+</div>
+</div>
+<br>
+<center><a href="/users/logout" class="btn btn-dark">Logout</a></center>
