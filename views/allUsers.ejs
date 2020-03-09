@@ -4,6 +4,7 @@
   <table class='table table-striped'>
     <thead>
         <tr>
+          <th>Profile Pic</th>
           <th>Id</th>
           <th>First Name</th>
           <th>Last Name</th>
@@ -12,6 +13,9 @@
     <tbody>
       <% users.forEach(function(user){ %>
         <tr id= "<%= user.id %>"  >
+          <td><% if(user.avatar){ %>
+            <img src = "./public/uploads/<%= user.avatar %>" width="80"><% } %>
+          </td>
           <td><%= user.id %></td>
           <td><%= user.first_name %></td>
           <td><%= user.last_name %></td>

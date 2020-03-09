@@ -6,6 +6,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 
 
+
 const app = express();
 
 // Passport Config
@@ -26,6 +27,7 @@ connection.connect((err)=>{
 // EJS
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
+
 
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
@@ -54,6 +56,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use('/users/public',express.static('public')) ;
 // Routes
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));

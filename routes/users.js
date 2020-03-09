@@ -6,6 +6,8 @@ const passport = require('passport');
 var connection = require('../config/keys');
 const { forwardAuthenticated } = require('../config/auth');
 var Request = require("request");
+const upload = require('../config/image') ;
+
 
 // Login Page
 router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
@@ -14,8 +16,9 @@ router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
 
 // Register
-router.post('/register', (req, res) => {
+router.post('/register', upload,(req, res) => {
   const { firstName, lastName, id,password, password2 } = req.body;
+  const avatar = req.file.filename ;
   let errors = [];
 
   if (!firstName || !lastName || !id || !password || !password2) {
@@ -33,8 +36,9 @@ router.post('/register', (req, res) => {
   if (errors.length > 0) {
     res.render('register', {
       errors,
-      name,
+      firstName,
       lastName,
+      id,
       password,
       password2
     });
@@ -59,7 +63,7 @@ router.post('/register', (req, res) => {
             if (err) throw err;
             passoword = hash;
 
-            connection.query('insert into users (id,first_name,last_name,password) VALUES(?,?,?,?)',[id,firstName,lastName,password],(err,result)=>{
+            connection.query('insert into users (id,first_name,last_name,avatar,password) VALUES(?,?,?,?,?)',[id,firstName,lastName,avatar,password],(err,result)=>{
               if(err)
                 console.log(err);
                 else{

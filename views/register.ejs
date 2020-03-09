@@ -5,7 +5,7 @@
         <i class="fas fa-user-plus"></i> Register
       </h1>
       <% include ./partials/messages %>
-      <form action="/users/register" method="POST">
+      <form action="/users/register" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <label for="firstName">First Name</label>
           <input
@@ -60,6 +60,17 @@
             class="form-control"
             placeholder="Confirm Password"
             value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="avatar">Profile Pic</label>
+          <input
+            type="file"
+            id="avatar"
+            name="avatar"
+            class="form-control"
+
+            value="<%= typeof avatar != 'undefined' ? avatar : '' %>"
           />
         </div>
         <button type="submit" class="btn btn-primary btn-block">

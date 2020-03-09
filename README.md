@@ -16,7 +16,15 @@ We need to have MYSQL Server installed.
 2. CREATE DATABASE www ;
 3. USE www ;
 4. CREATE TABLE users(id varchar(50),first_name varchar(50),last_name varchar(50),avatar varchar(50),password varchar(50)) ;
-5. Insert into users(id,first_name,last_name,password) VALUES('neeraj','Neeraj','Agrawal',123123),('aditya','Aditya','Shrivastava',123123),('arjun','Arjun','Patel',123123),('mayanka','Mayanka','Goyal',123123),('raunak','Raunak','Khandelwal',123123),('arpit','Arpit','Agrawal',123123),('aman','Aman','Mittal',123123),('anupam','Anupam','Juniwal',123123) ;
+5. Insert into users(id,first_name,last_name,avatar,password) VALUES
+('neeraj','Neeraj','Agrawal','avatar_1.jpg',123123),
+('aditya','Aditya','Shrivastava','avatar_2.jpg',123123),
+('arjun','Arjun','Patel','avatar_3.jpg',123123),
+('mayanka','Mayanka','Goyal','avatar_4.png',123123),
+('raunak','Raunak','Khandelwal','avatar_5.jpg',123123),
+('arpit','Arpit','Agrawal','avatar_6.jpg',123123),
+('aman','Aman','Mittal','avatar_7.jpg',123123),
+('anupam','Anupam','Juniwal','avatar_8.jpg',123123) ;
 6. CREATE TABLE friends(self_id varchar(50),friend_id varchar(50)) ;
 7. Insert into friends(self_id,friend_id) values
     ('neeraj','arpit'),
